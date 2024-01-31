@@ -3,7 +3,7 @@
 
 ### Progress Status
 1. Phase 1 (Setting up the repository): Completed
-2. Phase 2 (Planning the UX and UI): In Progress
+2. Phase 2 (Planning the UX and UI): Completed
 3. Phase 3 (Semantic Structure): In Progress
 4. Phase 4 (Styling and responsiveness): In Progress
 5. Phase 5 (Adding components): In Progress
