@@ -1,11 +1,12 @@
 import Logo from './Logo.svg';
+import './Styles/footer_style.css';
 
 function Footer() {
     return (
         <footer>
             <img src={Logo} alt="Little Lemon Logo"></img>
-            <p>Doormat Navigation</p>
             <ul>
+            <p>Doormat Navigation</p>
                 <li><a href="/#home">Home</a></li>
                 <li><a href="/#about">About</a></li>
                 <li><a href="/#menu">Menu</a></li>
@@ -13,14 +14,14 @@ function Footer() {
                 <li><a href="/#">Order Online</a></li>
                 <li><a href="/#">Login</a></li>
             </ul>
-            <p>Contact</p>
             <ul>
-                <li>Adress</li>
+            <p>Contact</p>
+                <li>Address</li>
                 <li>Phone Number</li>
                 <li>Email</li>
             </ul>
-            <p>Social Media Links</p>
             <ul>
+            <p>Social Media Links</p>
                 <li>Instagram</li>
                 <li>Facebook</li>
                 <li>Twitter</li>

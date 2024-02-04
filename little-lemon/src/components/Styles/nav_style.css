@@ -1,0 +1,32 @@
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav li {
+    display: inline-block;
+    margin: 5px;
+    font-family: 'Karla';
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 800px) {
+    nav ul {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 400px) {
+    nav li {
+        margin: 1.5px;
+    }
+}

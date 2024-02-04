@@ -1,0 +1,29 @@
+header {
+    display: flex;
+}
+
+header img {
+    width: 25%;
+    height: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EDEFEE;
+}
+
+@media (max-width: 800px) {
+    header img {
+        height: 50%;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    header img {
+        height: 90%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
