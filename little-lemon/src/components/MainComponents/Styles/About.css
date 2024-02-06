@@ -1,0 +1,30 @@
+.about-section {
+    background-color: #FFFFFF;
+    overflow: auto;
+}
+
+.about-section h1 {
+    padding-left: 100px;
+    font-family: 'Markazi';
+    color: yellow;
+    font-size: 40px;
+}
+
+.about-section h2 {
+    padding-left: 100px;
+    font-family: 'Markazi';
+    font-size: 27.6px;
+}
+
+.about-section p {
+    padding-left: 100px;
+    font-family: 'Karla';
+    clear: right;
+}
+
+.about-section img {
+    float: right;
+    width: 20%;
+    height: 20%;
+    padding-right: 15px;
+}

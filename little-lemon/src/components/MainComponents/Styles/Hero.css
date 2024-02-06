@@ -1,0 +1,32 @@
+.hero-section {
+    background-color: #495E57;
+    overflow: auto;
+}
+
+.hero-section h1 {
+    padding-left: 100px;
+    font-family: 'Markazi';
+    color: yellow;
+    font-size: 40px;
+}
+
+.hero-section h2 {
+    padding-left: 100px;
+    font-family: 'Markazi';
+    font-size: 27.6px;
+    color: white;
+}
+
+.hero-section p {
+    padding-left: 100px;
+    font-family: 'Karla';
+    font-size: 18px;
+    color: white;
+}
+
+.hero-section img {
+    float: right;
+    width: 20%;
+    height: 10%;
+    padding-right: 50px;
+}

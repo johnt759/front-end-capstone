@@ -1,15 +1,21 @@
-import './Styles/main_style.css';
+//import './Styles/main_style.css';
+import Hero from './MainComponents/Hero.js';
+import Specials from './MainComponents/Specials.js';
+import Testimonials from './MainComponents/Testimonials.js';
+import About from './MainComponents/About.js';
+import BookingPage from './MainComponents/BookingPage.js';
+import { Routes, Route } from "react-router-dom";
 
 function Main() {
     return (
         <main className="main-section">
-            <p>I am main.</p>
-            <p>I am hero section.</p>
-            <p>I am special menu.</p>
-            <p>I am testimonial.</p>
-            <p>I am about.</p>
-            <br></br>
-            <p>I am booking page.</p>
+            <Routes>
+                <Route path="/" element={<Hero/>}/>
+                <Route path="/specials" element={<Specials/>}/>
+                <Route path="/testimonials" element={<Testimonials/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/booking" element={<BookingPage/>}/>
+            </Routes>
          </main>
     );
 }
