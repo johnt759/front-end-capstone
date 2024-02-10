@@ -1,19 +1,10 @@
-/*import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});*/
-
 import BookingForm from './components/MainComponents/BookingForm.js';
-import Main, {initializeTimes, updateTimes} from './components/Main.js';
+import {initializeTimes, updateTimes} from './components/Main.js';
 import {render, screen} from "@testing-library/react";
 
 test('Renders the BookingForm heading', () => {
     render(<BookingForm />);
-    const headingElement = screen.getByText("Fill in the fields below");
+    const headingElement = screen.getByText("Book Now");
     expect(headingElement).toBeInTheDocument();
 })
 
@@ -28,11 +19,11 @@ test('Trying to initialize the available times', () => {
         {option: "21:00", time: "21:00"},
         {option: "22:00", time: "22:00"},
     ];
-    expect(initializeTimes).toBe(testArray);
+    expect(initializeTimes()).toHaveReturnedWith(testArray);
 })
 
 test('Must be able to update the times', () => {
-    render(<BookingForm />);
+    render(<BookingForm/>);
     let testArray =  [
         {option: "", time: "Select a time"},
         {option: "17:00", time: "17:00"},
@@ -42,5 +33,5 @@ test('Must be able to update the times', () => {
         {option: "21:00", time: "21:00"},
         {option: "22:00", time: "22:00"},
     ];
-    expect(updateTimes).toBe(testArray);
+    expect(updateTimes()).toHaveReturnedWith(testArray);
 })
