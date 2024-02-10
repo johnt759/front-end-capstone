@@ -1,0 +1,17 @@
+.form-section {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EE9972;
+    text-align: center;
+    display: grid;
+    max-width: 200px;
+    gap: 20px;
+}
+
+.form-section h2 {
+    font-family: 'Markazi';
+}
+
+.form-section label {
+    font-family: 'Karla';
+}
