@@ -1,5 +1,7 @@
 import BookingForm from './BookingForm.js';
+import ConfirmedBooking from './ConfirmedBooking.js';
 import './Styles/BookingPage.css';
+import { Routes, Route } from "react-router-dom";
 
 function BookingPage(props) {
     let {availableTimes, dispatchData} = props;
