@@ -1,8 +1,7 @@
 import {useState, useEffect} from "react";
 //import {useFormik} from "formik";
 import './Styles/BookingForm.css';
-import ConfirmedBooking from './ConfirmedBooking.js';
-import { useNavigate, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const DateRequired = () => {
     return (
@@ -42,6 +41,8 @@ function BookingForm(props) {
     const [guests, setGuests] = useState("");
     const [occasion, setOccasion] = useState("");
 
+    const redirectPage = useNavigate();
+
     const allValid = () => {
         return (
             date && time && guests && (guests >= 1 && guests <= 10) && occasion
@@ -60,6 +61,8 @@ function BookingForm(props) {
         setTime("");
         setGuests("");
         setOccasion("");
+
+        redirectPage("/confirmed");
     }
 
     useEffect(() =>

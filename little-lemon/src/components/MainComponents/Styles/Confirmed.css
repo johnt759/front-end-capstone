@@ -1,3 +1,7 @@
 .confirmation-page h1, p {
     text-align: center;
 }
+
+.confirmation-page {
+    background-color: #F4CE14;
+}

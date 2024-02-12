@@ -43,6 +43,7 @@ function Main() {
                 <Route path="/testimonials" element={<Testimonials/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatchData={dispatchData}/>}/>
+                <Route path="/confirmed" element={<ConfirmedBooking/>}/>
             </Routes>
          </main>
     );
