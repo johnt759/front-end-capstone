@@ -15,3 +15,7 @@
 .form-section label {
     font-family: 'Karla';
 }
+
+.error {
+    color: red;
+}

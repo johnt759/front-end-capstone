@@ -4,7 +4,8 @@ import Specials from './MainComponents/Specials.js';
 import Testimonials from './MainComponents/Testimonials.js';
 import About from './MainComponents/About.js';
 import BookingPage from './MainComponents/BookingPage.js';
-import { Routes, Route } from "react-router-dom";
+import ConfirmedBooking from './MainComponents/ConfirmedBooking.js';
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 
 function Main() {
