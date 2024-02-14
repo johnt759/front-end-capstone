@@ -43,3 +43,9 @@
     margin-left: auto;
     padding-right: 5px;
 }
+
+@media (max-width: 800px) {
+    .container .box {
+        width: 100%;
+    }
+}

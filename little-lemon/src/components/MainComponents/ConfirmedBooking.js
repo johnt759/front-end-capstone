@@ -1,6 +1,4 @@
 import { Link, Routes, Route } from "react-router-dom";
-import BookingPage from './BookingPage.js';
-import BookingForm from './BookingForm.js';
 import Hero from './Hero.js';
 import './Styles/Confirmed.css';
 
