@@ -26,7 +26,4 @@ nav a {
 }
 
 @media (max-width: 400px) {
-    nav li {
-        margin: 1.5px;
-    }
 }

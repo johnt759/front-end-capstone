@@ -1,8 +1,9 @@
 import {useState, useEffect} from "react";
-//import {useFormik} from "formik";
 import './Styles/BookingForm.css';
 import { useNavigate } from "react-router-dom";
+import {submitAPI} from '../api.js';
 
+// The following components below appear only if an input is invalid.
 const DateRequired = () => {
     return (
         <p className="error">Please include the date.</p>
@@ -41,9 +42,8 @@ function BookingForm(props) {
     const [guests, setGuests] = useState("");
     const [occasion, setOccasion] = useState("");
 
-    const redirectPage = useNavigate();
-
-    const allValid = () => {
+    function allValid() {
+        // Return true only if all values are not empty, and the number of guests is between 1 and 10 inclusively.
         return (
             date && time && guests && (guests >= 1 && guests <= 10) && occasion
         )
@@ -51,60 +51,59 @@ function BookingForm(props) {
 
     const submitForm = (e) => {
         e.preventDefault();
-        alert("Form submitted!");
-        console.log("Date: ", date);
-        console.log("Time: ", time);
-        console.log("Number of guests: ", guests);
-        console.log("Occassion: ", occasion);
 
-        setDate("");
-        setTime("");
-        setGuests("");
-        setOccasion("");
-
-        redirectPage("/confirmed");
+        let newForm = [date, time, guests, occasion];
+        // In case of success, clear away the input forms and redirect over to the confirmation page.
+        // Otherwise, alert the user that the booking is already reserved or the form can't be submitted.
+        if (submitAPI(newForm) != true) {
+            alert("Something went wrong during form submission. Try again later.");
+        }
+        else {
+            alert("Form submitted!");
+            setDate("");
+            setTime("");
+            setGuests("");
+            setOccasion("");
+        
+            // After submission, redirect over to the confirmation page.
+            useNavigate("/confirmed");
+        }
     }
 
     useEffect(() =>
-        {
-            //let redirect = useNavigate();
-            //redirect("/confirmed");
-        }
-    )
-    /*
-    const availableTimes =  [
-        {option: "", time: "Select a time"},
-        {option: "17:00", time: "17:00"},
-        {option: "18:00", time: "18:00"},
-        {option: "19:00", time: "19:00"},
-        {option: "20:00", time: "20:00"},
-        {option: "21:00", time: "21:00"},
-        {option: "22:00", time: "22:00"},
-    ]
-    */
+    {
+    })
 
     return (
         <section className="form-section">
             <h2>Fill in the fields below</h2>
             <form onSubmit={submitForm}>
                 <label htmlFor="res-date">Choose date</label>
+                <br/>
                 <input aria-label="Select a date" type="date" id="res-date" value={date} 
                 onChange={e=>setDate(e.target.value)}/>
                 {!date ? (<DateRequired/>) : void(0)}
+                <br/>
                 <label htmlFor="res-time">Choose time</label>
+                <br/>
                 <select aria-label="Select a time" id="res-time" value={time} onChange={
                     e => {setTime(e.target.value)}}>
+                    <option value="">Select a time</option>
                     {availableTimes?.map(thisTime => (
-                        <option value={thisTime.option}>{thisTime.time}</option>
+                        <option value={thisTime.time}>{thisTime.time}</option>
                     ))}
                 </select>
                 {!time ? (<TimeRequired/>) : void(0)}
+                <br/>
                 <label htmlFor="guests">Number of guests</label>
+                <br/>
                 <input aria-label="Select the number of guests" type="number" placeholder="1"
                 id="guests" value={guests} onChange={e => setGuests(e.target.value)}/>
                 {!guests ? (<GuestsRequired/>) : void(0)}
                 {(guests < 1 || guests > 10) ? (<InvalidNumber/>) : void(0)}
+                <br/>
                 <label htmlFor="occassion">Occassion</label>
+                <br/>
                 <select aria-label="Select an occasion" id="occasion" value={occasion}
                 onChange={e => setOccasion(e.target.value)}>
                     <option value="">Occasions</option>
@@ -113,10 +112,10 @@ function BookingForm(props) {
                     <option value="anniversary">Anniversary</option>
                 </select>
                 {!occasion ? (<OccasionRequired/>) : void(0)}
+                <br/>
                 <input aria-label="Submit form" disabled={!allValid()} type="submit" value="Make Your Reservation"/>
             </form>
          </section>
     );
 }
-
 export default BookingForm;

@@ -5,34 +5,32 @@ import Testimonials from './MainComponents/Testimonials.js';
 import About from './MainComponents/About.js';
 import BookingPage from './MainComponents/BookingPage.js';
 import ConfirmedBooking from './MainComponents/ConfirmedBooking.js';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useReducer } from "react";
+import { fetchAPI } from './api.js';
 
 function Main() {
     const [availableTimes, dispatchData] = useReducer(updateTimes(), initializeTimes());
 
     function updateTimes() {
-        return [
-            {option: "", time: "Select a time"},
-            {option: "17:00", time: "17:00"},
-            {option: "18:00", time: "18:00"},
-            {option: "19:00", time: "19:00"},
-            {option: "20:00", time: "20:00"},
-            {option: "21:00", time: "21:00"},
-            {option: "22:00", time: "22:00"},
-        ]
+        let newDate = new Date();
+        let thisYear = newDate.getFullYear();
+        let thisMonth = newDate.getMonth()+1;
+        let thisDay = newDate.getDate();
+        let thisDate = thisYear+'-'+thisMonth+'-'+thisDay;
+
+        return fetchAPI(thisDate);
     }
 
     function initializeTimes() {
-        return [
-            {option: "", time: "Select a time"},
-            {option: "17:00", time: "17:00"},
-            {option: "18:00", time: "18:00"},
-            {option: "19:00", time: "19:00"},
-            {option: "20:00", time: "20:00"},
-            {option: "21:00", time: "21:00"},
-            {option: "22:00", time: "22:00"},
-        ]
+        // Get today's date.
+        let newDate = new Date();
+        let thisYear = newDate.getFullYear();
+        let thisMonth = newDate.getMonth()+1;
+        let thisDay = newDate.getDate();
+        let thisDate = thisYear+'-'+thisMonth+'-'+thisDay;
+
+        return fetchAPI(thisDate);
     }
 
     return (
