@@ -45,8 +45,13 @@ test("submitAPI should return true if the booking is made, and is not yet reserv
 })
 
 test("submitAPI should return false if the booking is made, and said booking is already reserved for that date", () => {
-    let newForm = ["2024-2-24", "21:00", "2", "engagement"];
+    let newForm = ["2024-2-24", "17:00", "2", "engagement"];
     expect(submitAPI(newForm)).toBe(false);
+})
+
+test("submitAPI should return true if the booking is made, and reserved_slots yields null", () => {
+    let newForm = ["2024-2-28", "17:00", "2", "engagement"];
+    expect(submitAPI(newForm)).toBe(true);
 })
 
 test('allValid should return true if all inputs are valid', () => {

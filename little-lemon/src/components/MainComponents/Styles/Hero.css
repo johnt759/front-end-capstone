@@ -5,21 +5,18 @@
 
 .hero-section h1 {
     padding-left: 100px;
-    font-family: 'Markazi';
     color: #F4CE14;
     font-size: 40px;
 }
 
 .hero-section h2 {
     padding-left: 100px;
-    font-family: 'Markazi';
     font-size: 27.6px;
     color: white;
 }
 
 .hero-section p {
     padding-left: 100px;
-    font-family: 'Karla';
     font-size: 18px;
     color: white;
 }

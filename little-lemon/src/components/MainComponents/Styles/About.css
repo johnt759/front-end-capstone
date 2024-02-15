@@ -5,20 +5,17 @@
 
 .about-section h1 {
     padding-left: 100px;
-    font-family: 'Markazi';
     color: yellow;
     font-size: 40px;
 }
 
 .about-section h2 {
     padding-left: 100px;
-    font-family: 'Markazi';
     font-size: 27.6px;
 }
 
 .about-section p {
     padding-left: 100px;
-    font-family: 'Karla';
     clear: right;
 }
 

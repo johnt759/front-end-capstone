@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.confirmation-page h1 {
+    text-decoration: bold;
+    font-size: 30px;
+}
+
 .confirmation-page {
     background-color: #F4CE14;
 }
@@ -9,4 +14,13 @@
 .confirmation-page a {
     text-decoration: none;
     color: black;
+}
+
+.confirmation-page a:hover {
+    color: #495E57;
+}
+
+.confirmation-page a:active {
+    color: #495E57;
+    text-decoration: underline;
 }

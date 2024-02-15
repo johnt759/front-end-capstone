@@ -1,4 +1,4 @@
-//import './Styles/main_style.css';
+import './Styles/main_style.css';
 import Hero from './MainComponents/Hero.js';
 import Specials from './MainComponents/Specials.js';
 import Testimonials from './MainComponents/Testimonials.js';

@@ -11,7 +11,6 @@ nav ul {
 nav li {
     display: inline-block;
     margin: 5px;
-    font-family: 'Karla';
 }
 
 nav a {
@@ -19,11 +18,17 @@ nav a {
     color: black;
 }
 
+nav a:hover {
+    color: #EDEFEE;
+}
+
+nav a:active {
+    color: #EDEFEE;
+    text-decoration: underline;
+}
+
 @media (max-width: 800px) {
     nav ul {
         display: inline-flex;
     }
-}
-
-@media (max-width: 400px) {
 }

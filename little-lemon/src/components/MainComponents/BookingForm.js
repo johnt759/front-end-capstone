@@ -37,6 +37,8 @@ const OccasionRequired = () => {
 function BookingForm(props) {
     let {availableTimes, dispatch} = props;
 
+    const Confirm = useNavigate();
+
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guests, setGuests] = useState("");
@@ -56,7 +58,7 @@ function BookingForm(props) {
         // In case of success, clear away the input forms and redirect over to the confirmation page.
         // Otherwise, alert the user that the booking is already reserved or the form can't be submitted.
         if (submitAPI(newForm) != true) {
-            alert("Something went wrong during form submission. Try again later.");
+            alert("The booking is already reserved for that date. Try another one.");
         }
         else {
             alert("Form submitted!");
@@ -66,13 +68,9 @@ function BookingForm(props) {
             setOccasion("");
         
             // After submission, redirect over to the confirmation page.
-            useNavigate("/confirmed");
+            Confirm("/confirmed");
         }
     }
-
-    useEffect(() =>
-    {
-    })
 
     return (
         <section className="form-section">

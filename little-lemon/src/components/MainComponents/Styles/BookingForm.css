@@ -8,14 +8,6 @@
     gap: 20px;
 }
 
-.form-section h2 {
-    font-family: 'Markazi';
-}
-
-.form-section label {
-    font-family: 'Karla';
-}
-
 .error {
     color: red;
 }

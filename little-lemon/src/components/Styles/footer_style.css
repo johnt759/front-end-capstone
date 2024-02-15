@@ -11,7 +11,6 @@ footer img {
 footer p {
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Karla';
     text-align: left;
 }
 
@@ -20,7 +19,6 @@ footer ul {
     text-align: left;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Karla';
 }
 
 footer li {
