@@ -19,6 +19,8 @@
     margin-right: auto;
     float: left;
     width: 20%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .box h3 {
@@ -29,6 +31,7 @@
     width: 100%;
     height: auto;
     outline-style: solid;
+    border-radius: 20px;
 }
 
 .one-line {
