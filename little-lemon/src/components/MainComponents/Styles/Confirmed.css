@@ -1,14 +1,15 @@
+.confirmation-page {
+    background-color: #F4CE14;
+}
+
 .confirmation-page h1, p {
     text-align: center;
+    padding: 10px;
 }
 
 .confirmation-page h1 {
     text-decoration: bold;
     font-size: 30px;
-}
-
-.confirmation-page {
-    background-color: #F4CE14;
 }
 
 .confirmation-page a {

@@ -6,7 +6,7 @@ import About from './MainComponents/About.js';
 import BookingPage from './MainComponents/BookingPage.js';
 import ConfirmedBooking from './MainComponents/ConfirmedBooking.js';
 import { Routes, Route } from "react-router-dom";
-import { useReducer } from "react";
+import React, { useReducer } from "react";
 import { fetchAPI } from './api.js';
 
 function Main() {

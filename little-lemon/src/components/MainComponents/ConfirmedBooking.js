@@ -6,7 +6,7 @@ function ConfirmedBooking() {
     return (
         <section className="confirmation-page">
             <h1>You're all set!</h1>
-            <p>We look forward to seeing you.</p>
+            <p>We look forward to seeing you at your next reservation.</p>
             <Routes>
                 <Route path="/" element={Hero}/>
             </Routes>

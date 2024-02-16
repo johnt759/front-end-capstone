@@ -7,13 +7,13 @@
     text-align: left;
 }
 
-.container {
+.special-section .container {
     display: flex;
     align-items: flex-start;
-    padding: 15px;
+    padding: 25px;
 }
 
-.container .box {
+.special-section .container .box {
     background-color: #EDEFEE;
     margin-left: auto;
     margin-right: auto;

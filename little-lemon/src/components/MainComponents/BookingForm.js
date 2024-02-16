@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import './Styles/BookingForm.css';
 import { useNavigate } from "react-router-dom";
 import {submitAPI} from '../api.js';
@@ -44,33 +44,40 @@ function BookingForm(props) {
     const [guests, setGuests] = useState("");
     const [occasion, setOccasion] = useState("");
 
+    // Return true only if all values are not empty, and the number of guests is between 1 and 10 inclusively.
     function allValid() {
-        // Return true only if all values are not empty, and the number of guests is between 1 and 10 inclusively.
         return (
             date && time && guests && (guests >= 1 && guests <= 10) && occasion
         )
     }
 
+    function clearFields() {
+        setDate("");
+        setTime("");
+        setGuests("");
+        setOccasion("");
+    }
+
     const submitForm = (e) => {
         e.preventDefault();
-
         let newForm = [date, time, guests, occasion];
         // In case of success, clear away the input forms and redirect over to the confirmation page.
         // Otherwise, alert the user that the booking is already reserved or the form can't be submitted.
-        if (submitAPI(newForm) != true) {
-            alert("The booking is already reserved for that date. Try another one.");
-        }
-        else {
+        if (submitAPI(newForm) == true) {
             alert("Form submitted!");
-            setDate("");
-            setTime("");
-            setGuests("");
-            setOccasion("");
+            clearFields();
         
             // After submission, redirect over to the confirmation page.
             Confirm("/confirmed");
         }
+        else {
+            alert("The booking is already reserved for that date. Try another one.");
+        }
     }
+
+    useEffect(() => {
+
+    }, [])
 
     return (
         <section className="form-section">
@@ -80,7 +87,7 @@ function BookingForm(props) {
                 <br/>
                 <input aria-label="Select a date" type="date" id="res-date" value={date} 
                 onChange={e=>setDate(e.target.value)}/>
-                {!date ? (<DateRequired/>) : void(0)}
+                {!date ? (<DateRequired/>) : (<br/>)}
                 <br/>
                 <label htmlFor="res-time">Choose time</label>
                 <br/>
@@ -91,14 +98,14 @@ function BookingForm(props) {
                         <option value={thisTime.time}>{thisTime.time}</option>
                     ))}
                 </select>
-                {!time ? (<TimeRequired/>) : void(0)}
+                {!time ? (<TimeRequired/>) : (<br/>)}
                 <br/>
                 <label htmlFor="guests">Number of guests</label>
                 <br/>
                 <input aria-label="Select the number of guests" type="number" placeholder="1"
                 id="guests" value={guests} onChange={e => setGuests(e.target.value)}/>
-                {!guests ? (<GuestsRequired/>) : void(0)}
-                {(guests < 1 || guests > 10) ? (<InvalidNumber/>) : void(0)}
+                {!guests ? (<GuestsRequired/>) : (<br/>)}
+                {(guests < 1 || guests > 10) ? (<InvalidNumber/>) : (<br/>)}
                 <br/>
                 <label htmlFor="occassion">Occassion</label>
                 <br/>
@@ -109,7 +116,7 @@ function BookingForm(props) {
                     <option value="engagement">Engagement</option>
                     <option value="anniversary">Anniversary</option>
                 </select>
-                {!occasion ? (<OccasionRequired/>) : void(0)}
+                {!occasion ? (<OccasionRequired/>) : (<br/>)}
                 <br/>
                 <input aria-label="Submit form" disabled={!allValid()} type="submit" value="Make Your Reservation"/>
             </form>
