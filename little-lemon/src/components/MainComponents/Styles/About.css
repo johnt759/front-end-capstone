@@ -52,3 +52,9 @@
     margin-bottom: 50px;
     z-index: 1;
 }
+
+@media (max-width: 800px) {
+    .column2 {
+        display: none;
+    }
+}

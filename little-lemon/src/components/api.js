@@ -1,9 +1,5 @@
 // Feel free to modify the date and times list if needed.
 let time_date_slots = {
-	'2024-2-14': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
-	'2024-2-15': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
-	'2024-2-16': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
-	'2024-2-17': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
 	'2024-2-18': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
 	'2024-2-19': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
 	'2024-2-20': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
@@ -18,12 +14,34 @@ let time_date_slots = {
 	'2024-2-29': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}]
 }
 
+// Create an array of objects representing booking slots already reserved.
 // Also feel free to modify the reserved slots below.
-const reserved_slots = {
-	'2024-02-19': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}, {time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
-	'2024-02-24': [{time: '20:00'}, {time: '21:00'}, {time: '22:00'}],
-	'2024-02-29': [{time: '17:00'}, {time: '18:00'}, {time: '19:00'}]
-}
+const reserved_slots = [
+	{
+		date: '2024-02-24',
+		time: '17:00'
+	},
+	{
+		date: '2024-02-25',
+		time: '18:00'
+	},
+	{
+		date: '2024-02-26',
+		time: '19:00'
+	},
+	{
+		date: '2024-02-27',
+		time: '20:00'
+	},
+	{
+		date: '2024-02-28',
+		time: '21:00'
+	},
+	{
+		date: '2024-02-29',
+		time: '22:00'
+	}
+]
 
 function fetchAPI(date) {
 	// For the date parameter, check to see if there is any available time slots for that date.
@@ -39,21 +57,14 @@ function submitAPI(formData) {
 	let thisDate = formData[0];
 	let thisTime = formData[1];
 
-	// If there isn't any reserved dates, then simply return success.
-	if (reserved_slots[thisDate] == undefined) {
-		return true;
-	}
-	else {
-		// Run a for loop to check if any booking time slots are already reserved for the selected date.
-		// If there is, then return an unsuccessful response that the booking is already reserved.
-		// Otherwise, return a successful response.
-		for (var i = 0; i < reserved_slots[thisDate].length; i++) {
-			if (thisTime == reserved_slots[thisDate][i].time) {
-				return false;
-			}
+	// Use a for-of loop to search through the reserved booking slots.
+	// If there is already a booking slot, then return false. Else, return true.
+	for (var slot of reserved_slots) {
+		if (slot.date == thisDate && slot.time == thisTime) {
+			return false;
 		}
-		return true;
 	}
+	return true;
 }
 
 export {fetchAPI, submitAPI};
