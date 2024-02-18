@@ -1,28 +1,60 @@
 .about-section {
+    margin-top: 10px;
     background-color: #FFFFFF;
     overflow: auto;
+    display: flex;
 }
 
-.about-section h1 {
+.column1 {
+    align-items: left;
+}
+
+.column1 h1 {
     padding-left: 100px;
-    color: yellow;
+    color: #F4CE14;
     font-size: 40px;
 }
 
-.about-section h2 {
+.column1 h2 {
     padding-left: 100px;
     font-size: 27.6px;
 }
 
-.about-section p {
+.column1 p {
     padding-left: 100px;
     clear: right;
     text-align: left;
 }
 
-.about-section img {
-    float: right;
-    width: 20%;
-    height: 20%;
+.column2 {
+    align-items: right;
+}
+
+.column2 img {
+    width: 33%;
     padding-right: 15px;
+    margin-left: auto;
+}
+
+.column2 #image1 {
+    float: left;
+    position: relative;
+    margin-right: -100%;
+    margin-top: 50px;
+    width: 50%;
+    height: auto;
+}
+
+.column2 #image2 {
+    float: right;
+    position: absolute;
+    margin-left: 350px;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+@media (max-width: 800px) {
+    .column2 {
+        display: none;
+    }
 }

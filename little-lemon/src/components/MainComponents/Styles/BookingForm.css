@@ -1,7 +1,6 @@
 .form-section {
     margin-left: auto;
     margin-right: auto;
-    background-color: #EE9972;
     text-align: center;
     display: grid;
     max-width: 400px;
@@ -14,6 +13,13 @@
 }
 
 .error {
+    background-color: #EE9972;
     color: red;
-    border-style: solid;
+}
+
+.form-section input[type="submit"] {
+    background-color: #F4CE14;
+    padding: 20px 10px;
+    font-size: 15px;
+    border-radius: 10px;
 }
