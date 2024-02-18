@@ -29,7 +29,10 @@ let special_item = [
 function Specials() {
     return (
         <section className="special-section">
-            <h2>Specials</h2>
+            <section className="inline">
+                <h2>Specials</h2>
+                <input type="button" value="Online Menu"></input>
+            </section>
             <article className="container">
                 {special_item.map((this_item) => (
                     <article className="box">

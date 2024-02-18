@@ -6,10 +6,11 @@ function Nav() {
         <nav>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/specials">Specials</Link></li>
-                <li><Link to="/testimonials">Testimonials</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/booking">Bookings</Link></li>
+                <li>About</li>
+                <li>Menu</li>
+                <li><Link to="/booking">Reservations</Link></li>
+                <li>Order Online</li>
+                <li>Login</li>
             </ul>
          </nav>
     );

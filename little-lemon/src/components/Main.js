@@ -1,8 +1,5 @@
 import './Styles/main_style.css';
-import Hero from './MainComponents/Hero.js';
-import Specials from './MainComponents/Specials.js';
-import Testimonials from './MainComponents/Testimonials.js';
-import About from './MainComponents/About.js';
+import Home from './Home.js';
 import BookingPage from './MainComponents/BookingPage.js';
 import ConfirmedBooking from './MainComponents/ConfirmedBooking.js';
 import { Routes, Route } from "react-router-dom";
@@ -36,10 +33,7 @@ function Main() {
     return (
         <main className="main-section">
             <Routes>
-                <Route path="/" element={<Hero/>}/>
-                <Route path="/specials" element={<Specials/>}/>
-                <Route path="/testimonials" element={<Testimonials/>}/>
-                <Route path="/about" element={<About/>}/>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatchData={dispatchData}/>}/>
                 <Route path="/confirmed" element={<ConfirmedBooking/>}/>
             </Routes>

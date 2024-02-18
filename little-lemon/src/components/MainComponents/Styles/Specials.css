@@ -1,10 +1,26 @@
 .special-section {
     background-color: #FFFFFF;
+    padding-top: 10px;
 }
 
-.special-section h2 {
+.special-section .inline {
+    display: flex;
+    align-items: flex-start;
+}
+
+.special-section .inline h2 {
     padding-left: 100px;
     text-align: left;
+}
+
+.special-section .inline input {
+    background-color: #F4CE14;
+    float: right;
+    margin-left: auto;
+    margin-right: 50px;
+    padding: 30px 15px;
+    font-size: 20px;
+    border-radius: 10px;
 }
 
 .special-section .container {

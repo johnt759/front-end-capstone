@@ -27,3 +27,12 @@
     height: 10%;
     padding-right: 50px;
 }
+
+.hero-section input {
+    background-color: #F4CE14;
+    margin-left: 200px;
+    margin-top: 50px;
+    padding: 30px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+}
